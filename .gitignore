@@ -1,0 +1,9 @@
+/.idea/
+*.iml
+target
+*/*.iml
+*/target
+apiworld-bundle/src
+apiworld-bundle-mock/src
+
+
