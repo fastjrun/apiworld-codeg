@@ -24,10 +24,6 @@
         </dependency>
         <dependency>
             <groupId>com.fastjrun.codeg</groupId>
-            <artifactId>sdkg-provider</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fastjrun.codeg</groupId>
             <artifactId>sdkg-test</artifactId>
             <scope>test</scope>
         </dependency>

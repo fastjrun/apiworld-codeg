@@ -203,7 +203,6 @@
         <mybatisVersion>3.5.7</mybatisVersion>
         <springframework.version>5.1.5.RELEASE</springframework.version>
         <servlet-api.version>3.1.0</servlet-api.version>
-        <springframework-security.version>4.2.14.RELEASE</springframework-security.version>
         <javax.validation.version>2.0.1.Final</javax.validation.version>
         <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
@@ -213,8 +212,8 @@
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
         <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-        <sdkg.version>3.0-SNAPSHOT</sdkg.version>
-        <apiworld-sdkg.version>1.0-SNAPSHOT</apiworld-sdkg.version>
+        <sdkg.version>3.0</sdkg.version>
+        <apiworld-sdkg.version>1.0</apiworld-sdkg.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
