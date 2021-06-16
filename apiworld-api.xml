@@ -48,7 +48,7 @@
         </packet>
     </packets>
     <services>
-        <service name="userServiceRestCustomApi" class="UserServiceRestCustomApi">
+        <service name="userServiceRestCustomApi" class="controller.UserServiceRestCustomApi">
             <method name="register" version="" path="/register" remark="注册">
                 <request class="packet.customapi.RegistserRestRequestBody"/>
             </method>
@@ -65,7 +65,7 @@
                 <response class="packet.customapi.LoginRestResponseBody"/>
             </method>
         </service>
-        <service name="articleServiceRestCustomApi" class="ArticleServiceRestCustomApi">
+        <service name="articleServiceRestCustomApi" class="controller.ArticleServiceRestCustomApi">
             <method name="check" version="" path="/check" method="GET"
                     remark="是否有新文章检测"/>
             <method name="latests" version="" path="/latests" remark="最近版本列表">
