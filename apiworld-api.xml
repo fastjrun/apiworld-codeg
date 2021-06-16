@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://fastjrun.github.io/apiworld-sdkg/fastjrun-schema.xsd">
+<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://fastjrun.github.io/apiworld-sdkg/fastjrun-schema.xsd">
     <packets>
         <packet class="packet.customapi.RegistserRestRequestBody">
             <field name="loginId" dataType="String" length="12" canBeNull="false"
@@ -37,15 +38,13 @@
             <field name="uuidOld" dataType="String" length="64" canBeNull="false"
                    remark="旧登录凭证"/>
         </packet>
-        <packet class="packet.customapi.ArticleListResponseBody">
-            <list name="list" class="packet.customapi.Article">
-                <field name="id" dataType="Long" length="64" canBeNull="false"
-                       remark="文章Id"/>
-                <field name="title" dataType="String" length="64" canBeNull="false"
-                       remark="文章编号"/>
-                <field name="detailUrl" dataType="String" length="128"
-                       canBeNull="false" remark="文章详情地址"/>
-            </list>
+        <packet class="packet.customapi.Article">
+            <field name="id" dataType="Long" length="64" canBeNull="false"
+                   remark="文章Id"/>
+            <field name="title" dataType="String" length="64" canBeNull="false"
+                   remark="文章编号"/>
+            <field name="detailUrl" dataType="String" length="128"
+                   canBeNull="false" remark="文章详情地址"/>
         </packet>
     </packets>
     <services>
@@ -70,7 +69,7 @@
             <method name="check" version="" path="/check" method="GET"
                     remark="是否有新文章检测"/>
             <method name="latests" version="" path="/latests" remark="最近版本列表">
-                <response class="packet.customapi.ArticleListResponseBody"/>
+                <response class="packet.customapi.Article:List"/>
             </method>
         </service>
     </services>

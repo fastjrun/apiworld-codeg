@@ -22,6 +22,31 @@
             </dependency>
             <dependency>
                 <groupId>com.fastjrun.codeg</groupId>
+                <artifactId>apiworld-api-body</artifactId>
+                <version>${apiworld-sdkg.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fastjrun.codeg</groupId>
+                <artifactId>apiworld-api-result</artifactId>
+                <version>${apiworld-sdkg.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fastjrun.codeg</groupId>
+                <artifactId>apiworld-api-message</artifactId>
+                <version>${apiworld-sdkg.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fastjrun.codeg</groupId>
+                <artifactId>apiworld-api-message-body</artifactId>
+                <version>${apiworld-sdkg.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fastjrun.codeg</groupId>
+                <artifactId>apiworld-api-message-result</artifactId>
+                <version>${apiworld-sdkg.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fastjrun.codeg</groupId>
                 <artifactId>apiworld-provider</artifactId>
                 <version>${apiworld-sdkg.version}</version>
             </dependency>
@@ -213,7 +238,7 @@
         <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <sdkg.version>3.0</sdkg.version>
-        <apiworld-sdkg.version>1.0</apiworld-sdkg.version>
+        <apiworld-sdkg.version>1.1</apiworld-sdkg.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
