@@ -64,7 +64,7 @@
             <artifactId>sdkg-provider</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.fastjrun.codeg</groupId>
+            <groupId>com.fastjrun.codeg.apiworld</groupId>
             <artifactId>apiworld-provider</artifactId>
         </dependency>
     </dependencies>

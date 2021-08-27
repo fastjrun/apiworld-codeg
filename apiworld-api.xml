@@ -71,6 +71,9 @@
             <method name="latests" version="" path="/latests" remark="最近版本列表">
                 <response class="packet.customapi.Article:List"/>
             </method>
+            <method name="latestsAsPage" version="" path="/latestsAsPage" remark="最近版本列表">
+                <response class="packet.customapi.Article:Page"/>
+            </method>
         </service>
     </services>
     <controllers>

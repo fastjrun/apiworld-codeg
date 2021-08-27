@@ -12,10 +12,6 @@
     <artifactId>apiworld-mock-server</artifactId>
     <dependencies>
         <dependency>
-            <artifactId>apiworld-api</artifactId>
-            <groupId>com.fastjrun.codeg</groupId>
-        </dependency>
-        <dependency>
             <groupId>com.fastjrun.apiworld</groupId>
             <artifactId>apiworld-bundle-mock</artifactId>
             <version>${project.version}</version>

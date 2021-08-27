@@ -37,123 +37,27 @@
   ]
 }
 ```
-#### 稍加改动即可支持的接口响应格式
-目前项目稍加改动，能够支持的接口基础响应格式如下
-- msg节点改为message
-```json
-{
-  "code": "0000",
-  "message": "OK"
-}
-```
-- data节点改为body或者result
-```json
-{
-  "code": "0000",
-  "msg": "OK",
-  "body": {
-    "nickName": "fastjrun",
-    "sex": "1",
-    "mobileNo": "18900000000",
-    "email": "18900000000@alibaba.com",
-    "uu_id": "H8gpczAh6SfTuZMUpMSPSKNCTc2Jlf3Rr6ABJBIn9p"
-  }
-}
-```
-```json
-{
-  "code": "0000",
-  "msg": "OK",
-  "result": {
-    "nickName": "fastjrun",
-    "sex": "1",
-    "mobileNo": "18900000000",
-    "email": "18900000000@alibaba.com",
-    "uu_id": "H8gpczAh6SfTuZMUpMSPSKNCTc2Jlf3Rr6ABJBIn9p"
-  }
-}
-```
-```json
-{
-  "code": "0000",
-  "msg": "OK",
-  "body": [
-    {
-      "id": 53,
-      "detailUrl": "http://www.example.com/book/53",
-      "title": "接口规范"
-    }
-  ]
-}
-```
-```json
-{
-  "code": "0000",
-  "msg": "OK",
-  "result": [
-    {
-      "id": 53,
-      "detailUrl": "http://www.example.com/book/53",
-      "title": "接口规范"
-    }
-  ]
-}
-```
-- msg节点改为message，且data节点改为body或者result
+4. 分页格式
 ```json
 {
   "code": "0000",
   "message": "OK",
-  "body": {
-    "nickName": "fastjrun",
-    "sex": "1",
-    "mobileNo": "18900000000",
-    "email": "18900000000@alibaba.com",
-    "uu_id": "H8gpczAh6SfTuZMUpMSPSKNCTc2Jlf3Rr6ABJBIn9p"
+  "data": {
+    "currentPage": 0,
+    "pageSize": 0,
+    "rows": [
+      {
+        "id": 53,
+        "detailUrl": "http://www.example.com/book/53",
+        "title": "接口规范"
+      }
+    ],
+    "total": 0,
+    "totalPage": 0
   }
 }
 ```
-```json
-{
-  "code": "0000",
-  "message": "OK",
-  "result": {
-    "nickName": "fastjrun",
-    "sex": "1",
-    "mobileNo": "18900000000",
-    "email": "18900000000@alibaba.com",
-    "uu_id": "H8gpczAh6SfTuZMUpMSPSKNCTc2Jlf3Rr6ABJBIn9p"
-  }
-}
-```
-```json
-{
-  "code": "0000",
-  "message": "OK",
-  "body": [
-    {
-      "id": 53,
-      "detailUrl": "http://www.example.com/book/53",
-      "title": "接口规范"
-    }
-  ]
-}
-```
-```json
-{
-  "code": "0000",
-  "message": "OK",
-  "result": [
-    {
-      "id": 53,
-      "detailUrl": "http://www.example.com/book/53",
-      "title": "接口规范"
-    }
-  ]
-}
-```
-#### 目前还不支持的接口响应格式
-没有做不到，只有想不到，放码过来……
+
 ### 使用前提
 使用前确保你的办公机已经可以正常安装和配置jdk1.8+、maven3.5+和idea，eclipse和其他ide工具或许也能正常使用，但确实很推荐idea，太好用了，没有之一。
 ### 快速搭建接口模拟系统

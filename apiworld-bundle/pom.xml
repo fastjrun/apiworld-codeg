@@ -11,11 +11,7 @@
     <artifactId>apiworld-bundle</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.fastjrun.codeg</groupId>
-            <artifactId>apiworld-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fastjrun.codeg</groupId>
+            <groupId>com.fastjrun.codeg.apiworld</groupId>
             <artifactId>apiworld-provider</artifactId>
         </dependency>
         <dependency>
