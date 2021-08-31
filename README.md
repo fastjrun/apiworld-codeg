@@ -78,6 +78,11 @@ java -jar apiworld-mock-server/target/apiworld-mock-server.jar
 ![](https://oscimg.oschina.net/oscnet/up-e5dd7dfec3630de72a17803c3ad5d33a22a.png)  
 点击Execute按钮，可以看到返回值类似如下  
 ![](https://oscimg.oschina.net/oscnet/up-7b6eef245248186eeaaeb4f03e397d51743.png)
+本项目也集成了knife4j，knife4j是为Java MVC框架集成Swagger生成Api文档的增强解决方案,它的前身是swagger-bootstrap-ui。
+用浏览器访问http://localhost:8080/doc.html  显示如下
+![](https://oscimg.oschina.net/oscnet/up-e319533d1005339975502eba7392b10a634.png)
+
+
 ### 接口定义规范约定
 #### 术语
 **Controller**：控制器，统称接口，包括http接口和rpc接口，本项目中只涉及http接口。
@@ -93,10 +98,10 @@ java -jar apiworld-mock-server/target/apiworld-mock-server.jar
 - DTO类成员变量类型只能是包装数据类型、其他DTO数据类型和java.util.List；且List中的类型只能是包装数据类型或其他DTO数据类型
 - DTO所有类成员变量都必须提供getter/setter方法的成员变量，且getter/setter方法不能含有任何业务逻辑
 - DTO所有类成员变量命名规范建议
-    - 一般以连续的两个小写字母开头
-    - 如果类成员名的第二个字母大写，那么该属性名直接用作 getter/setter 方法中 get/set 的后部分，就是说大小写不变。例如类成员名为uName，方法是getuName/setuName
-    - 如果前两个字母是大写（一般的专有名词和缩略词都会大写），也是类成员名直接用作 getter/setter 方法中 get/set 的后部分。例如类成员名为URL，方法是getURL/setURL
-    - 如果类成员属性是Boolean，那么类成员名不可以用is、IS、iS和Is开头
+  - 一般以连续的两个小写字母开头
+  - 如果类成员名的第二个字母大写，那么该属性名直接用作 getter/setter 方法中 get/set 的后部分，就是说大小写不变。例如类成员名为uName，方法是getuName/setuName
+  - 如果前两个字母是大写（一般的专有名词和缩略词都会大写），也是类成员名直接用作 getter/setter 方法中 get/set 的后部分。例如类成员名为URL，方法是getURL/setURL
+  - 如果类成员属性是Boolean，那么类成员名不可以用is、IS、iS和Is开头
 - 满足以上定义的DTO均可以在快嘉接口定义文件中被使用，无论已有还是新建
 - 对于未在规范中显性支持的字段类型和自定义类型，暂不支持
 #### Service规范约定
@@ -122,10 +127,10 @@ java -jar apiworld-mock-server/target/apiworld-mock-server.jar
 #### 定义DTO
 ```xml
 <packet class="packet.customapi.LoginRestRequestBody">
-    <field name="loginName" dataType="String" length="12"
-           canBeNull="false" remark="登录名"/>
-    <field name="loginpwd" dataType="String" length="64" canBeNull="false"
-           remark="密码"/>
+  <field name="loginName" dataType="String" length="12"
+         canBeNull="false" remark="登录名"/>
+  <field name="loginpwd" dataType="String" length="64" canBeNull="false"
+         remark="密码"/>
 </packet>
 ```
 如上所示，该DTO对应的Java类名为LoginRestRequestBody，生成在名为${packagePrefix}.package.customapi的package下，一共6个属性，分别是loginName和loginpwd，其对应的属性均为String。
@@ -138,75 +143,75 @@ import java.io.Serializable;
 
 /**
  * 注意：本内容仅限于公司内部传阅，禁止外泄以及用于其他的商业目的
- * 
+ *
  * @Copyright 2021 快嘉. All rights reserved.
  * @author cuiyingfeng
  */
 public class LoginRestRequestBody
-    implements Serializable
+        implements Serializable
 {
-    /**
-     * 密码
-     */
-    private String loginpwd;
-    /**
-     * 登录名
-     */
-    private String loginName;
-    private static final long serialVersionUID = 575886617L;
+  /**
+   * 密码
+   */
+  private String loginpwd;
+  /**
+   * 登录名
+   */
+  private String loginName;
+  private static final long serialVersionUID = 575886617L;
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(("LoginRestRequestBody"+" ["));
-        sb.append("field [");
-        sb.append("loginpwd");
-        sb.append("=");
-        sb.append(this.loginpwd);
-        sb.append(",");
-        sb.append("loginName");
-        sb.append("=");
-        sb.append(this.loginName);
-        sb.append("]");
-        sb.append("]");
-        return sb.toString();
-    }
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append(("LoginRestRequestBody"+" ["));
+    sb.append("field [");
+    sb.append("loginpwd");
+    sb.append("=");
+    sb.append(this.loginpwd);
+    sb.append(",");
+    sb.append("loginName");
+    sb.append("=");
+    sb.append(this.loginName);
+    sb.append("]");
+    sb.append("]");
+    return sb.toString();
+  }
 
-    public String getLoginpwd() {
-        return this.loginpwd;
-    }
+  public String getLoginpwd() {
+    return this.loginpwd;
+  }
 
-    public void setLoginpwd(String loginpwd) {
-        this.loginpwd = loginpwd;
-    }
+  public void setLoginpwd(String loginpwd) {
+    this.loginpwd = loginpwd;
+  }
 
-    public String getLoginName() {
-        return this.loginName;
-    }
+  public String getLoginName() {
+    return this.loginName;
+  }
 
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
-    }
+  public void setLoginName(String loginName) {
+    this.loginName = loginName;
+  }
 }
 ```
 #### 定义Service
 ```xml
 <service name="userServiceRestCustomApi" class="controller.UserServiceRestCustomApi">
-    <method name="register" version="" path="/register" remark="注册">
-        <request class="packet.customapi.RegistserRestRequestBody"/>
-    </method>
-    <method name="login" version="" path="/login" remark="登录">
-        <request class="packet.customapi.LoginRestRequestBody"/>
-        <response class="packet.customapi.LoginRestResponseBody"/>
-    </method>
-    <method name="login" version="v1_1" path="/login" remark="登录v1.1">
-        <request class="packet.customapi.LoginRestRequestBody"/>
-        <response class="packet.customapi.LoginRestResponseBody"/>
-    </method>
-    <method name="autoLogin" version="" path="/autoLogin" remark="自动登录">
-        <request class="packet.customapi.AutoLoginRestRequestBody"/>
-        <response class="packet.customapi.LoginRestResponseBody"/>
-    </method>
+  <method name="register" version="" path="/register" remark="注册">
+    <request class="packet.customapi.RegistserRestRequestBody"/>
+  </method>
+  <method name="login" version="" path="/login" remark="登录">
+    <request class="packet.customapi.LoginRestRequestBody"/>
+    <response class="packet.customapi.LoginRestResponseBody"/>
+  </method>
+  <method name="login" version="v1_1" path="/login" remark="登录v1.1">
+    <request class="packet.customapi.LoginRestRequestBody"/>
+    <response class="packet.customapi.LoginRestResponseBody"/>
+  </method>
+  <method name="autoLogin" version="" path="/autoLogin" remark="自动登录">
+    <request class="packet.customapi.AutoLoginRestRequestBody"/>
+    <response class="packet.customapi.LoginRestResponseBody"/>
+  </method>
 </service>
 ```
 如上所示，该Service对应的Java类名为UserServiceRestCustomApi，生成在名为${packagePrefix}.service.controller的package下
@@ -222,31 +227,31 @@ import com.fastjrun.apiworld.packet.customapi.RegistserRestRequestBody;
 
 /**
  * 注意：本内容仅限于公司内部传阅，禁止外泄以及用于其他的商业目的
- * 
+ *
  * @Copyright 2021 快嘉. All rights reserved.
  * @author cuiyingfeng
  */
 public interface UserServiceRestCustomApi {
 
-    /**
-     * 注册
-     */
-    void register(RegistserRestRequestBody requestBody);
+  /**
+   * 注册
+   */
+  void register(RegistserRestRequestBody requestBody);
 
-    /**
-     * 登录
-     */
-    LoginRestResponseBody login(LoginRestRequestBody requestBody);
+  /**
+   * 登录
+   */
+  LoginRestResponseBody login(LoginRestRequestBody requestBody);
 
-    /**
-     * 登录v1.1
-     */
-    LoginRestResponseBody loginv1_1(LoginRestRequestBody requestBody);
+  /**
+   * 登录v1.1
+   */
+  LoginRestResponseBody loginv1_1(LoginRestRequestBody requestBody);
 
-    /**
-     * 自动登录
-     */
-    LoginRestResponseBody autoLogin(AutoLoginRestRequestBody requestBody);
+  /**
+   * 自动登录
+   */
+  LoginRestResponseBody autoLogin(AutoLoginRestRequestBody requestBody);
 }
 ```
 
@@ -254,7 +259,7 @@ public interface UserServiceRestCustomApi {
 ```xml
 <controller type="CustomApi" name="UserCustomApiController" path="/customapi/user"
             clientName="UserCustomApiClient" remark="用户管理接口" tags="第三方接口">
-    <service name="userService" ref="userServiceRestCustomApi"/>
+  <service name="userService" ref="userServiceRestCustomApi"/>
 </controller>
 ```
 如上所示，该Controller对应的Java类名为UserCustomApiController，生成在名为${packagePrefix}. web.apiworld.controller的package下
@@ -281,65 +286,65 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 注意：本内容仅限于公司内部传阅，禁止外泄以及用于其他的商业目的
- * 
+ *
  * @Copyright 2021 快嘉. All rights reserved.
  * @author cuiyingfeng
  */
 @RestController
 @RequestMapping("/customapi/user")
 public class UserCustomApiController
-    extends BaseController
+        extends BaseController
 {
-    @Autowired
-    @Qualifier("userServiceRestCustomApi")
-    private UserServiceRestCustomApi userService;
+  @Autowired
+  @Qualifier("userServiceRestCustomApi")
+  private UserServiceRestCustomApi userService;
 
-    /**
-     * 注册
-     */
-    @RequestMapping(value = "/register", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public ResultModel register(@RequestBody @Valid RegistserRestRequestBody requestBody) {
-        ResultModel result = ResultHelper.ok();
-        this.userService.register(requestBody);
-        log.debug("result={}", result);
-        return result;
-    }
+  /**
+   * 注册
+   */
+  @RequestMapping(value = "/register", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+  public ResultModel register(@RequestBody @Valid RegistserRestRequestBody requestBody) {
+    ResultModel result = ResultHelper.ok();
+    this.userService.register(requestBody);
+    log.debug("result={}", result);
+    return result;
+  }
 
-    /**
-     * 登录
-     */
-    @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public ResultModel<LoginRestResponseBody> login(@RequestBody @Valid LoginRestRequestBody requestBody) {
-        ResultModel<LoginRestResponseBody> result = ResultHelper.ok();
-        LoginRestResponseBody resultData = this.userService.login(requestBody);
-        result.setData(resultData);
-        log.debug("result={}", result);
-        return result;
-    }
+  /**
+   * 登录
+   */
+  @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+  public ResultModel<LoginRestResponseBody> login(@RequestBody @Valid LoginRestRequestBody requestBody) {
+    ResultModel<LoginRestResponseBody> result = ResultHelper.ok();
+    LoginRestResponseBody resultData = this.userService.login(requestBody);
+    result.setData(resultData);
+    log.debug("result={}", result);
+    return result;
+  }
 
-    /**
-     * 登录v1.1
-     */
-    @RequestMapping(value = "/login/v1_1", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public ResultModel<LoginRestResponseBody> loginv1_1(@RequestBody @Valid LoginRestRequestBody requestBody) {
-        ResultModel<LoginRestResponseBody> result = ResultHelper.ok();
-        LoginRestResponseBody resultData = this.userService.loginv1_1(requestBody);
-        result.setData(resultData);
-        log.debug("result={}", result);
-        return result;
-    }
+  /**
+   * 登录v1.1
+   */
+  @RequestMapping(value = "/login/v1_1", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+  public ResultModel<LoginRestResponseBody> loginv1_1(@RequestBody @Valid LoginRestRequestBody requestBody) {
+    ResultModel<LoginRestResponseBody> result = ResultHelper.ok();
+    LoginRestResponseBody resultData = this.userService.loginv1_1(requestBody);
+    result.setData(resultData);
+    log.debug("result={}", result);
+    return result;
+  }
 
-    /**
-     * 自动登录
-     */
-    @RequestMapping(value = "/autoLogin", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public ResultModel<LoginRestResponseBody> autoLogin(@RequestBody @Valid AutoLoginRestRequestBody requestBody) {
-        ResultModel<LoginRestResponseBody> result = ResultHelper.ok();
-        LoginRestResponseBody resultData = this.userService.autoLogin(requestBody);
-        result.setData(resultData);
-        log.debug("result={}", result);
-        return result;
-    }
+  /**
+   * 自动登录
+   */
+  @RequestMapping(value = "/autoLogin", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+  public ResultModel<LoginRestResponseBody> autoLogin(@RequestBody @Valid AutoLoginRestRequestBody requestBody) {
+    ResultModel<LoginRestResponseBody> result = ResultHelper.ok();
+    LoginRestResponseBody resultData = this.userService.autoLogin(requestBody);
+    result.setData(resultData);
+    log.debug("result={}", result);
+    return result;
+  }
 }
 ```
 #### 
