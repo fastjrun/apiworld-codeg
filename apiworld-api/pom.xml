@@ -10,27 +10,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.fastjrun.codeg.apiworld.simple</groupId>
-        <artifactId>apiworld-codeg</artifactId>
         <version>1.4-SNAPSHOT</version>
+        <artifactId>apiworld-codeg</artifactId>
     </parent>
-    <artifactId>apiworld-bundle</artifactId>
+    <artifactId>apiworld-api</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.fastjrun.codeg.apiworld</groupId>
-            <artifactId>apiworld-sdkg-provider</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
+            <artifactId>apiworld-sdkg-api</artifactId>
         </dependency>
     </dependencies>
     <build>
@@ -43,12 +30,12 @@
                         <id>initialize phase</id>
                         <phase>initialize</phase>
                         <goals>
-                            <goal>bundleGc</goal>
+                            <goal>apiGc</goal>
                         </goals>
                         <configuration>
                             <bundleFiles>${bundleFiles}</bundleFiles>
                             <packagePrefix>${packagePrefix}.</packagePrefix>
-                            <module>apiworld-bundle</module>
+                            <module>apiworld-api</module>
                             <company>${company}</company>
                         </configuration>
                     </execution>

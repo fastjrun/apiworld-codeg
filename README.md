@@ -5,14 +5,14 @@
 1. 基础响应格式
 ```json
 {
-  "code": "0000",
+  "code": 2000,
   "msg": "OK"
 }
 ```
 2. 对象格式
 ```json
 {
-  "code": "0000",
+  "code": 2000,
   "msg": "OK",
   "data": {
     "nickName": "fastjrun",
@@ -26,7 +26,7 @@
 3. 数组格式
 ```json
 {
-  "code": "0000",
+  "code": 2000,
   "msg": "OK",
   "data": [
     {
@@ -40,7 +40,7 @@
 4. 分页格式
 ```json
 {
-  "code": "0000",
+  "code": 2000,
   "message": "OK",
   "data": {
     "currentPage": 0,
@@ -67,7 +67,7 @@ cd apiworld-codeg
 sh build.sh package_mock_server
 java -jar apiworld-mock-server/target/apiworld-mock-server.jar
 ```
-用浏览器访问http://localhost:8080/swagger-ui.html 显示如下  
+用浏览器访问http://localhost:8080/doc.html 显示如下  
 ![](https://oscimg.oschina.net/oscnet/up-c2f8dfe2dc0f6232bdea7b0bc284e48bbd3.png)  
 显然这是一个满足swagger风格的接口系统。
 展开“第三方接口 Article Custom Api Controller”  ，这里一共提供了6个接口示例如下  

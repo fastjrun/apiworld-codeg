@@ -3,7 +3,9 @@
 target
 */*.iml
 */target
-apiworld-bundle/src
-apiworld-bundle-mock/src
+*-api/src
+*-client/src
+*-bundle/src
+*-bundle-mock/src
 
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="https://fastjrun.github.io/apiworld-sdkg/fastjrun-schema.xsd">
+        xsi:noNamespaceSchemaLocation="fastjrun-apiworld-schema.xsd">
     <packets>
         <packet class="vo.UserInfoVO">
             <field name="roles" dataType="String:List" length="12" canBeNull="false" remark=""/>
