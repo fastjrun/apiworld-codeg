@@ -2,14 +2,14 @@
 
 echo "build ..."
 if [ "install_all" = $1 ]; then
-  mvn compile -pl apiworld-codeg/apiworld-api -am -Dapigc.skip=false
-  mvn compile -pl apiworld-codeg/apiworld-bundle -am -Dbdgc.skip=false
-  mvn compile -pl apiworld-codeg/apiworld-client -am -Dclientgc.skip=false
+  mvn compile -pl apiworld-api -am -Dapigc.skip=false
+  mvn compile -pl apiworld-bundle -am -Dbdgc.skip=false
+  mvn compile -pl apiworld-client -am -Dclientgc.skip=false
   mvn clean install -U
 elif [ "deploy_all" = $1 ]; then
-  mvn compile -pl apiworld-codeg/apiworld-api -am -Dapigc.skip=false
-  mvn compile -pl apiworld-codeg/apiworld-bundle -am -Dbdgc.skip=false
-  mvn compile -pl apiworld-codeg/apiworld-client -am -Dclientgc.skip=false
+  mvn compile -pl apiworld-api -am -Dapigc.skip=false
+  mvn compile -pl apiworld-bundle -am -Dbdgc.skip=false
+  mvn compile -pl apiworld-client -am -Dclientgc.skip=false
   mvn clean deploy -U
 elif [ "package_mock_server" = $1 ]; then
   mvn clean package -U -pl apiworld-mock-server -am -Dbdmgc.skip=false
