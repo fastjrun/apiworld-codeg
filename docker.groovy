@@ -8,6 +8,7 @@ node {
     stage('prepare docker') {
         sh 'rm -rf output && mkdir output'
         sh 'cp apiworld-mock-server/target/apiworld-mock-server.jar output'
+        sh 'cp Dockerfile output'
         dir( 'output' ) {
             stash 'output'
         }
